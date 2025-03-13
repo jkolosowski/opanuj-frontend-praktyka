@@ -52,11 +52,6 @@ const CountriesSearchContainer = () => {
     return (
       <>
         <CountryList countries={currentCountries} />
-        <Pagination
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          totalPages={totalPages}
-        />
       </>
     );
   };
@@ -73,6 +68,11 @@ const CountriesSearchContainer = () => {
         <SortOptions sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </div>
       <ErrorBoundary>{renderContent()}</ErrorBoundary>
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPages={totalPages}
+      />
     </main>
   );
 };
