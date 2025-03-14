@@ -1,0 +1,44 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "jaqubowsky",
+      "name": "Jakub Nalewajk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38465906?v=4",
+      "profile": "http://jnalewajk.me",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "gromen",
+      "name": "Marcin Gromek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14578910?v=4",
+      "profile": "https://github.com/gromen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "KamilBarczyk",
+      "name": "Kamil Barczyk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62600472?v=4",
+      "profile": "https://github.com/KamilBarczyk",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "opanuj-frontend-praktyka",
+  "projectOwner": "przeprogramowani"
+}
