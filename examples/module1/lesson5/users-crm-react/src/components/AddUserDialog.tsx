@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useUsersQuery from '../hooks/useUsersQuery';
 
 interface AddUserDialogProps {
   isOpen: boolean;
@@ -10,6 +11,8 @@ const AddUserDialog = ({ isOpen, onClose }: AddUserDialogProps) => {
   const [status, setStatus] = useState('New');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const { refetch } = useUsersQuery();
 
   const statuses = [
     'New',
@@ -42,6 +45,7 @@ const AddUserDialog = ({ isOpen, onClose }: AddUserDialogProps) => {
 
       if (!response.ok) throw new Error('Failed to add user');
 
+      refetch();
       closeDialog();
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to add user');
