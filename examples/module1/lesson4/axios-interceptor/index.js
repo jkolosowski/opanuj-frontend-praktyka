@@ -2,12 +2,15 @@ import axios from 'axios';
 
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {
+  config.metadata = { startTime: new Date() };
   return config;
 });
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
-  // Do something with response data
+  const time = new Date() - response.config.metadata.startTime;
+
+  console.log(`Request to ${response.config.url} took ${time}ms`);
   return response;
 });
 
