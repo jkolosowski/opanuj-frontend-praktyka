@@ -25,4 +25,16 @@ describe('User renderer', () => {
     renderItems(container, users);
     expect(Array.from(container.querySelectorAll('li'))).toHaveLength(2);
   });
+
+  test('should render correctly list with age', () => {
+    localStorage.setItem('userRole', 'admin');
+
+    const container = document.createElement('div');
+    renderItems(container, users);
+    const listItems = Array.from(container.querySelectorAll('li'));
+
+    expect(listItems[0].textContent).toContain('Name: John, Age: 30');
+    expect(listItems[1].textContent).toContain('(Admin) Name: Jane, Age: 25');
+    expect(listItems[2].textContent).toContain('Name: Jack, Age: 40');
+  });
 });
