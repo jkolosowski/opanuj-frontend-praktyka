@@ -3,7 +3,8 @@
   import type { LocationWeather } from '../models/LocationWeather';
   import WeatherPreview from './WeatherPreview.svelte';
 
-  let weather: LocationWeather;
+  let weather: LocationWeather | null = null;
+  let errorMessage: string = '';
 
   async function onLocationChange(event: KeyboardEvent) {
     const locationQuery = (event.target as HTMLInputElement).value;
@@ -11,9 +12,14 @@
       const result = await fetchWeather(locationQuery);
       if (result) {
         weather = result;
+        errorMessage = '';
+      } else {
+        weather = null;
+        errorMessage = 'Weather data not found for the provided location.';
       }
     } catch {
-      console.error(`Failed to fetch weather for ${locationQuery}`);
+      weather = null;
+      errorMessage = 'Failed to fetch weather data. Please try again.';
     }
   }
 </script>
@@ -39,6 +45,9 @@
     />
   </div>
   <div>
+    {#if errorMessage}
+      <p class="text-red-500 mt-4">{errorMessage}</p>
+    {/if}
     {#if weather}
       <WeatherPreview {weather} />
     {/if}
