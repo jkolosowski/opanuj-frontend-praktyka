@@ -1,11 +1,11 @@
 {
-  "name": "@przeprogramowani/design-tokens",
-  "version": "2.1.1",
-  "description": "Design tokens collection for Przeprogramowani Design System",
+  "name": "@jkolosowski/design-tokens",
+  "version": "1.0.0",
+  "description": "Design tokens collection for jkolosowski Design System",
   "license": "MIT",
   "keywords": [
     "design tokens",
-    "przeprogramowani"
+    "jkolosowski"
   ],
   "files": [
     "dist",
